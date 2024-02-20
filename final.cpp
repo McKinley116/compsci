@@ -27,7 +27,6 @@ int main ()
 	string userAnswer_hello;
 	cin >> userAnswer_hello;
 
-
 	return 0;
 }
 
