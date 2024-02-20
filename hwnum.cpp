@@ -23,7 +23,7 @@ int main() {
     std::string primary_highway = extract_primary_highway(numeric_part);
     std::string direction = determine_direction(primary_highway);
     std::cout << "I-" << user_input << " is an auxiliary, serving I-90"
-              << primary_highway << ", going" << direction << std::endl;
+              << primary_highway << ", going " << direction << std::endl;
   } else {
     std::cout << "Invalid highway number: " << user_input << std::endl;
   }
@@ -32,17 +32,26 @@ int main() {
 }
 
 std::string extract_numeric_part(const std::string &highway_number) {
-  size_t position = highway_number.find_first_of("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-  return highway_number.substr(0, position);
+  size_t position = highway_number.find_first_not_of("0123456789");
+  if (position != std::string::npos) {
+    return highway_number.substr(0, position);
+  }
+  return highway_number;
 }
 bool is_primary_highway(const std::string &numeric_part) {
-  return (numeric_part.length() == 1 || numeric_part.length() == 2);
+  return (numeric_part.length() == 1 || (numeric_part.length() == 2));
 }
 bool is_auxiliary_highway(const std::string &numeric_part) {
   return (numeric_part.length() == 3);
 }
 std::string extract_primary_highway(const std::string &numeric_part) {
-  return numeric_part.substr(0, is_primary_highway(numeric_part) ? 2 : 1);
+  if (numeric_part.length() == 3) {
+    return numeric_part.substr(1);
+  } else if (numeric_part.length() == 4) {
+    return numeric_part.substr(2);
+  } else {
+    return numeric_part.substr(1, 1);
+  }
 }
 std::string determine_direction(const std::string &highway_number) {
   char last_char = highway_number.back();
