@@ -1,1 +1,1 @@
-# CompSci_Projects
+# compsci
