@@ -8,7 +8,7 @@ int main() {
   std::cin >> triChar;
   std::cout << "Enter a height: " << std::endl;
   std::cin >> triHeight;
-  std::cout << " " << std::endl;
+  std::cout << std::endl;
 
   int height = 0;
 
