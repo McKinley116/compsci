@@ -8,11 +8,22 @@
 #include <iostream>
 #include <iomanip>
 #include <cmath>
+#include <string>
 
 int main ()
 {
+	std::cout << "-----Panther Express Cashier Program-----" << std::endl;
 	// require user input for three items and their cost and quantity.
 	//	cost per item = unit price * quantity
+	std::string itmBght; 
+	double itmPrice;
+	int itmQnty;
+
+	std::cin >> itmBght;
+	std::cin >> itmPrice;
+	std::cin >> itmQnty;
+
+	std::cout << itmBght << " " << itmPrice << " " << itmQnty << std::endl;
 	// require user to input sales tax ( between 0 and 100).
 	// displays break down of items, cost, quantity. cost summary.
 	// displays pretax.
