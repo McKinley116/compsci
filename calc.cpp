@@ -107,6 +107,6 @@ int main ()
 	const int NICKEL = 5;
 	const int PENNY = 1;
 	std::cout << "Denominations" << std::endl;
-
+	
 return 0;
 }
