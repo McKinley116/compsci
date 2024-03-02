@@ -8,6 +8,9 @@
 #include <cstdio>
 #include <iostream>
 #include <iomanip>
+#include #include <cstdio>
+#include <iostream>
+#include <iomanip>
 #include <cmath>
 #include <ostream>
 #include <set>
@@ -51,8 +54,7 @@ int main ()
 	std::cout << std::endl;
 
 	// require user to input sales tax ( between 0 and 100).
-	int slsTax (slsTax > 0 && slsTax < 100);
-
+	int slsTax;
 	std::cin >> slsTax;
 	std::cout << "Tax rate (in whole numbers): " << slsTax << std::endl;
 	std::cout << std::endl;
@@ -82,7 +84,7 @@ int main ()
 	std::cout << "$-----Cost w/ Tax-----$" << std::endl;
 	double txRate = slsTax / 2.0;
 	double tax = preTotal * txRate;
-	double total = preTotal * tax;
+	double total = preTotal + tax;
 	std::cout << "$"<< total << std::endl;
 	std::cout << std::endl;
 
@@ -90,7 +92,6 @@ int main ()
 	double moneyPd;
 	std::cout << "$-----How much money do you have?-----$" << std::endl;
 	std::cin >> moneyPd;
-	std::cout << moneyPd << std::endl;
 
 	// displays change.
 	//	change = total - cost
