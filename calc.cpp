@@ -23,7 +23,7 @@ int main ()
 	std::cin >> itmBght1;
 	std::cout << "Unit name: " << itmBght1 << std::endl; 
 	std::cin >> itmPrice1;
-	std::cout << " Unit price for " << itmBght1 << " is: " << itmPrice1 << std::endl;
+	std::cout << "Unit price for " << itmBght1 << " is: " << itmPrice1 << std::endl;
 	std::cin >> itmQnty1;
 	std::cout << "Unit quantity for " << itmBght1 << " is: " << itmQnty1 << std::endl;
 	std::cout << std::endl;
@@ -35,7 +35,7 @@ int main ()
 	std::cin >> itmPrice2;
 	std::cin >> itmQnty2;
 	std::cout << "Unit name: " << itmBght2 << std::endl; 
-	std::cout << " Unit price for " << itmBght2 << " is: " << itmPrice2 << std::endl;
+	std::cout << "Unit price for " << itmBght2 << " is: " << itmPrice2 << std::endl;
 	std::cout << "Unit quantity for " << itmBght2 << " is: " << itmQnty2 << std::endl;
 	std::cout << std::endl;
 
