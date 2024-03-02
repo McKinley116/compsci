@@ -101,12 +101,30 @@ int main ()
 	std::cout << std::endl;
 
 	// displays denominations of %100, $20, $5, $1, .25, .10, .05, .01).
-	const int DOLLAR = 100;
-	const int QUARTER = 25;
-	const int DIME = 10;
-	const int NICKEL = 5;
-	const int PENNY = 1;
+	int dollar100 = change / 100;
+	change = dollar100 * 100;
+	int dollar20 = change /20;
+	change = dollar20 * 20;
+	int dollar5 = change / 5;
+	change = dollar5 * 5;
+	int dollar1 = change /1;
+	change = dollar1 * 1;
+	int quarters = change / 0.25;
+	change = quarters * 0.25;
+	int dimes = change / .10;
+	change = dimes * 0.10;
+	int nickels = change / .05;
+	change = nickels * .05;
+	int pennies = round(change * 100);
 	std::cout << "Denominations" << std::endl;
+	std::cout << "$100 bills: " << dollar100 << std::endl;
+	std::cout << "$20 bills: " << dollar20 << std::endl;
+	std::cout << "$5 bills: " << dollar5 << std::endl;
+	std::cout << "$1 bills: " << dollar1 << std::endl;
+	std::cout << "Quarters: " << quarters << std::endl;
+	std::cout << "Dimes: " << dimes << std::endl;
+	std::cout << "Nickels: " << nickels << std::endl;
+	std::cout << "Pennies: " << pennies << std::endl;
 	
 return 0;
 }
