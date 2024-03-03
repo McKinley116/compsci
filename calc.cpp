@@ -20,34 +20,35 @@ int main ()
 	std::string itmBght1; 
 	double itmPrice1;
 	int itmQnty1;
-	std::cin >> itmBght1;
-	std::cout << "Unit name: " << itmBght1 << std::endl; 
-	std::cin >> itmPrice1;
-	std::cout << "Unit price for " << itmBght1 << " is: " << itmPrice1 << std::endl;
+
+	std::cout << "Unit name: " << itmBght1;
+	std::cin >> itmBght1;	
+	std::cout << "Unit price for " << itmBght1 << " is: " << itmPrice1;
+	std::cin >> itmPrice1;	
+	std::cout << "Unit quantity for " << itmBght1 << " is: " << itmQnty1; 	
 	std::cin >> itmQnty1;
-	std::cout << "Unit quantity for " << itmBght1 << " is: " << itmQnty1 << std::endl;
 	std::cout << std::endl;
 
 	std::string itmBght2;
 	double itmPrice2;
 	int itmQnty2;
+	std::cout << "Unit name: " << itmBght2; 
 	std::cin >> itmBght2; 
+	std::cout << "Unit price for " << itmBght2 << " is: " << itmPrice2;
 	std::cin >> itmPrice2;
+	std::cout << "Unit quantity for " << itmBght2 << " is: " << itmQnty2;
 	std::cin >> itmQnty2;
-	std::cout << "Unit name: " << itmBght2 << std::endl; 
-	std::cout << "Unit price for " << itmBght2 << " is: " << itmPrice2 << std::endl;
-	std::cout << "Unit quantity for " << itmBght2 << " is: " << itmQnty2 << std::endl;
 	std::cout << std::endl;
 
 	std::string itmBght3;
 	double itmPrice3;
 	int itmQnty3;
-	std::cin >> itmBght3;
+	std::cout << "Unit name: " << itmBght3;
+	std::cin >> itmBght3;	
+	std::cout << "Unit price for " << itmBght3 << " is: " << itmPrice3;
 	std::cin >> itmPrice3;
+	std::cout << "Unit quantity for " << itmBght3 << " is: " << itmQnty3;
 	std::cin >> itmQnty3;
-	std::cout << "Unit name: " << itmBght3 << std::endl;
-	std::cout << "Unit price for " << itmBght3 << " is: " << itmPrice3 << std::endl;
-	std::cout << "Unit quantity for " << itmBght3 << " is: " << itmQnty3 << std::endl;
 	std::cout << std::endl;
 
 	// require user to input sales tax ( between 0 and 100).
