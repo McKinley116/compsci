@@ -62,10 +62,10 @@ int main ()
 	double ttlCost2 = itmPrice2 * itmQnty2;
 	double ttlCost3 = itmPrice3 * itmQnty3;
 	std::cout << "$-----Cost Breakdown-----$" << std::endl;
-	std::cout << "Item" << std::setw(15) << "Price" << std::setw(15) << "Quantity" << std::setw(15) << "Cost" << std::endl;
-	std::cout << itmBght1 << std::setw(15) << itmPrice1 << std::setw(15) << itmQnty1 << std::setw(15) << ttlCost1 << std::endl;
-	std::cout << itmBght2 << std::setw(15) << itmPrice2 << std::setw(15) << itmQnty2 << std::setw(15) << ttlCost2 << std::endl;
-	std::cout << itmBght3 << std::setw(15) << itmPrice3 << std::setw(15) << itmQnty3 << std::setw(15) << ttlCost3 << std::endl;
+	std::cout << "Item" << std::setw(20) << "Price" << std::setw(20) << "Quantity" << std::setw(20) << "Cost" << std::endl;
+	std::cout << itmBght1 << std::setw(20) << itmPrice1 << std::setw(20) << itmQnty1 << std::setw(20) << ttlCost1 << std::endl;
+	std::cout << itmBght2 << std::setw(20) << itmPrice2 << std::setw(20) << itmQnty2 << std::setw(20) << ttlCost2 << std::endl;
+	std::cout << itmBght3 << std::setw(20) << itmPrice3 << std::setw(20) << itmQnty3 << std::setw(20) << ttlCost3 << std::endl;
 	std::cout << std::endl;
 
 	// displays pretax.
@@ -98,23 +98,23 @@ int main ()
 	std::cout << "--------------------";
 	std::cout << std::endl;
 
-	// displays denominations of %100, $20, $5, $1, .25, .10, .05, .01). static_cast<int> is a safe way to convert..
-	double remainingChange = change;
-	int dollar100 = static_cast<int>(remainingChange / 100);
-	remainingChange -= static_cast<int>(remainingChange / 20);
-	int dollar20 = static_cast<int>(remainingChange / 1);
-	remainingChange -= dollar20 * 20;
-	int dollar5 = static_cast<int>(remainingChange / 5);
-	remainingChange -= dollar5 * 5;
-	int dollar1 = static_cast<int>(remainingChange / 1);
-	remainingChange -= dollar1 * 1;
-	int quarters = static_cast<int>(remainingChange / 0.25);
-	remainingChange -= quarters * 0.25;
-	int dimes = static_cast<int>(remainingChange / 0.10);
-	remainingChange -= dimes * 0.10;
-	int nickels = static_cast<int>(remainingChange / .05);
-	remainingChange -= nickels * .05;
-	int pennies = round(remainingChange * 100);
+	// displays denominations of %100, $20, $5, $1, .25, .10, .05, .01). basic math converts and outputs denominations..
+	int dollar100 = change / 100 ;
+	change -= dollar100 * 100;
+	int dollar20 = change / 20;
+	change -= dollar20 * 20;
+	int dollar5 = change / 5;
+	change -= dollar5 * 5;
+	int dollar1 = change / 1;
+	change -= dollar1 * 1;
+	int quarters = change / 0.25;
+	change -= quarters * 0.25;
+	int dimes = change / 0.10;
+	change -= dimes * 0.10;
+	int nickels = change / 0.05;
+	change -= nickels * 0.05;
+	int pennies = change / 0.01;
+	change -= pennies * 1;
 	std::cout << "Denominations" << std::endl;
 	std::cout << "$100 bills: " << dollar100 << std::endl;
 	std::cout << "$20 bills: " << dollar20 << std::endl;
