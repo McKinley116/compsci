@@ -52,9 +52,9 @@ int main ()
 	std::cout << std::endl;
 
 	// require user to input sales tax ( between 0 and 100).
-	int slsTax;
+	int slsTax;	
+	std::cout << "Tax rate (in whole numbers): ";
 	std::cin >> slsTax;
-	std::cout << "Tax rate (in whole numbers): " << slsTax << std::endl;
 	std::cout << std::endl;
 
 	// displays break down of items, cost, quantity. cost summary.
@@ -99,7 +99,7 @@ int main ()
 	std::cout << "--------------------";
 	std::cout << std::endl;
 
-<<<<<<< HEAD
+
 	// displays denominations of %100, $20, $5, $1, .25, .10, .05, .01). static_cast<int> is a safe way to convert..
 	double remainingChange = change;
 	int dollar100 = static_cast<int>(remainingChange / 100);
@@ -117,25 +117,7 @@ int main ()
 	int nickels = static_cast<int>(remainingChange / .05);
 	remainingChange -= nickels * .05;
 	int pennies = static_cast<int>(round(remainingChange * 100));
-=======
-	// displays denominations of %100, $20, $5, $1, .25, .10, .05, .01). basic math converts and outputs denominations..
-	int dollar100 = change / 100 ;
-	change -= dollar100 * 100;
-	int dollar20 = change / 20;
-	change -= dollar20 * 20;
-	int dollar5 = change / 5;
-	change -= dollar5 * 5;
-	int dollar1 = change / 1;
-	change -= dollar1 * 1;
-	int quarters = change / 0.25;
-	change -= quarters * 0.25;
-	int dimes = change / 0.10;
-	change -= dimes * 0.10;
-	int nickels = change / 0.05;
-	change -= nickels * 0.05;
-	int pennies = change / 0.01;
-	change -= pennies * 1;
->>>>>>> 33e2bf2efa835192677d05274eba6ad540be5e3a
+
 	std::cout << "Denominations" << std::endl;
 	std::cout << "$100 bills: " << dollar100 << std::endl;
 	std::cout << "$20 bills: " << dollar20 << std::endl;
