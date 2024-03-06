@@ -114,7 +114,7 @@ int main ()
 	remainingChange -= dimes * 0.10;
 	int nickels = static_cast<int>(remainingChange / .05);
 	remainingChange -= nickels * .05;
-	int pennies = round(remainingChange * 100);
+	int pennies = static_cast<int>(round(remainingChange * 100));
 	std::cout << "Denominations" << std::endl;
 	std::cout << "$100 bills: " << dollar100 << std::endl;
 	std::cout << "$20 bills: " << dollar20 << std::endl;
