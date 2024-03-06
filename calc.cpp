@@ -96,7 +96,7 @@ int main ()
 	double change = moneyPd - total;
 	std::cout << "$-----Change-----$" << std::endl;
 	std::cout << change << std::endl;
-	std::cout << "--------------------";
+	std::cout << "---------Denominations-----------";
 	std::cout << std::endl;
 
 
