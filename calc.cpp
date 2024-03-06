@@ -69,14 +69,15 @@ int main ()
 
 	// displays break down of items, cost, quantity. cost summary.
 	// cost per item = unit price * quantity
+	const int WIDTH = 15; // included to easily adjust table spacing..
 	double ttlCost1 = itmPrice1 * itmQnty1;
 	double ttlCost2 = itmPrice2 * itmQnty2;
 	double ttlCost3 = itmPrice3 * itmQnty3;
 	std::cout << "$-----Cost Breakdown-----$" << std::endl;
-	std::cout << "Item" << std::setw(20) << "Price" << std::setw(20) << "Quantity" << std::setw(20) << "Cost" << std::endl;
-	std::cout << itmBght1 << std::setw(20) << itmPrice1 << std::setw(20) << itmQnty1 << std::setw(20) << ttlCost1 << std::endl;
-	std::cout << itmBght2 << std::setw(20) << itmPrice2 << std::setw(20) << itmQnty2 << std::setw(20) << ttlCost2 << std::endl;
-	std::cout << itmBght3 << std::setw(20) << itmPrice3 << std::setw(20) << itmQnty3 << std::setw(20) << ttlCost3 << std::endl;
+	std::cout << std::setw(WIDTH) << "Item" << std::setw(WIDTH) << "Price" << std::setw(WIDTH) << "Quantity" << std::setw(WIDTH) << "Cost" << std::setw(WIDTH) << std::endl;
+	std::cout << std::setw(WIDTH) << itmBght1 << std::setw(WIDTH) << itmPrice1 << std::setw(WIDTH) << itmQnty1 << std::setw(WIDTH) << ttlCost1 << std::setw(WIDTH) << std::endl;	
+	std::cout << std::setw(WIDTH) << itmBght2 << std::setw(WIDTH) << itmPrice2 << std::setw(WIDTH) << itmQnty2 << std::setw(WIDTH) << ttlCost2 << std::setw(WIDTH) << std::endl;
+	std::cout << std::setw(WIDTH) << itmBght3 << std::setw(WIDTH) << itmPrice3 << std::setw(WIDTH) << itmQnty3 << std::setw(WIDTH) << ttlCost3 << std::setw(WIDTH) << std::endl;
 	std::cout << std::endl;
 
 	// displays pretax.
@@ -113,8 +114,8 @@ int main ()
 	// displays denominations of %100, $20, $5, $1, .25, .10, .05, .01). static_cast<int> is a safe way to convert..
 	double remainingChange = change;
 	int dollar100 = static_cast<int>(remainingChange / 100);
-	remainingChange -= ;
-	int dollar20 = static_cast<int>(remainingChange / 1);
+	remainingChange -= dollar100 * 100;
+	int dollar20 = static_cast<int>(remainingChange / 20);
 	remainingChange -= dollar20 * 20;
 	int dollar5 = static_cast<int>(remainingChange / 5);
 	remainingChange -= dollar5 * 5;
