@@ -9,6 +9,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cmath>
+#include <limits>
 #include <ostream>
 #include <set>
 #include <string>
@@ -22,34 +23,43 @@ int main ()
 	int itmQnty1;
 
 	std::cout << "Unit name: ";
-	std::cin >> itmBght1;	
+	std::getline(std::cin, itmBght1);	
 	std::cout << "Unit price for " << itmBght1 << " is: ";
 	std::cin >> itmPrice1;	
 	std::cout << "Unit quantity for " << itmBght1 << " is: "; 	
 	std::cin >> itmQnty1;
 	std::cout << std::endl;
 
+	// this clears the buffer for getline..
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
 	std::string itmBght2;
 	double itmPrice2;
 	int itmQnty2;
 	std::cout << "Unit name: "; 
-	std::cin >> itmBght2; 
+	std::getline(std::cin, itmBght2); 
 	std::cout << "Unit price for " << itmBght2 << " is: ";
 	std::cin >> itmPrice2;
 	std::cout << "Unit quantity for " << itmBght2 << " is: ";
 	std::cin >> itmQnty2;
 	std::cout << std::endl;
 
+	// this clears the buffer for getline..
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
 	std::string itmBght3;
 	double itmPrice3;
 	int itmQnty3;
 	std::cout << "Unit name: ";
-	std::cin >> itmBght3;	
+	std::getline(std::cin, itmBght3);	
 	std::cout << "Unit price for " << itmBght3 << " is: ";
 	std::cin >> itmPrice3;
 	std::cout << "Unit quantity for " << itmBght3 << " is: ";
 	std::cin >> itmQnty3;
 	std::cout << std::endl;
+
+	// this clears the buffer for getline..
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
 	// require user to input sales tax ( between 0 and 100).
 	int slsTax;	
@@ -103,7 +113,7 @@ int main ()
 	// displays denominations of %100, $20, $5, $1, .25, .10, .05, .01). static_cast<int> is a safe way to convert..
 	double remainingChange = change;
 	int dollar100 = static_cast<int>(remainingChange / 100);
-	remainingChange -= static_cast<int>(remainingChange / 20);
+	remainingChange -= ;
 	int dollar20 = static_cast<int>(remainingChange / 1);
 	remainingChange -= dollar20 * 20;
 	int dollar5 = static_cast<int>(remainingChange / 5);
