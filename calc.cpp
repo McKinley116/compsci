@@ -22,7 +22,8 @@ int main ()
 	int itmQnty1;
 
 	std::cout << "Unit name: ";
-	std::cin >> itmBght1;	
+	std::cin >> itmBght1;
+	getline(std::cin, itmBght1);
 	std::cout << "Unit price for " << itmBght1 << " is: ";
 	std::cin >> itmPrice1;	
 	std::cout << "Unit quantity for " << itmBght1 << " is: "; 	
@@ -127,6 +128,9 @@ int main ()
 	std::cout << "Dimes: " << dimes << std::endl;
 	std::cout << "Nickels: " << nickels << std::endl;
 	std::cout << "Pennies: " << pennies << std::endl;
+
+	//close out the program at anytime.
+	
 	
 return 0;
 }
