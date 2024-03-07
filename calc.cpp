@@ -75,6 +75,7 @@ int main ()
 	double ttlCost3 = itmPrice3 * itmQnty3;
 	std::cout << "$-----Cost Breakdown-----$" << std::endl;
 	std::cout << std::setw(WIDTH) << "Item" << std::setw(WIDTH) << "Price" << std::setw(WIDTH) << "Quantity" << std::setw(WIDTH) << "Cost" << std::setw(WIDTH) << std::endl;
+	std::cout << "-------------------------------------------------------------------------------" << std::endl;
 	std::cout << std::setw(WIDTH) << itmBght1 << std::setw(WIDTH) << itmPrice1 << std::setw(WIDTH) << itmQnty1 << std::setw(WIDTH) << ttlCost1 << std::setw(WIDTH) << std::endl;	
 	std::cout << std::setw(WIDTH) << itmBght2 << std::setw(WIDTH) << itmPrice2 << std::setw(WIDTH) << itmQnty2 << std::setw(WIDTH) << ttlCost2 << std::setw(WIDTH) << std::endl;
 	std::cout << std::setw(WIDTH) << itmBght3 << std::setw(WIDTH) << itmPrice3 << std::setw(WIDTH) << itmQnty3 << std::setw(WIDTH) << ttlCost3 << std::setw(WIDTH) << std::endl;
@@ -94,7 +95,9 @@ int main ()
 	double txRate = slsTax / 2.0;
 	double tax = preTotal * txRate;
 	double total = preTotal + tax;
-	std::cout << "$"<< total << std::endl;
+	std::cout << total << std::endl;
+	std::cout << std::endl;
+	std::cout <<  "-------------------------------------------------------------------------------";
 	std::cout << std::endl;
 
 	// asks user price paid.
@@ -107,7 +110,7 @@ int main ()
 	double change = moneyPd - total;
 	std::cout << "$-----Change-----$" << std::endl;
 	std::cout << change << std::endl;
-	std::cout << "--------------------";
+	std::cout <<  "-------------------------------------------------------------------------------" ;
 	std::cout << std::endl;
 
 
