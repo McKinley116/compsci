@@ -118,7 +118,12 @@ int main ()
 
 	std::cout << "---------Denominations-----------";
 
-	std::cout <<  "-------------------------------------------------------------------------------" ; std::cout << std::endl; // displays denominations of %100, $20, $5, $1, .25, .10, .05, .01). static_cast<int> is a safe way to convert.. double remainingChange = change; int dollar100 = static_cast<int>(remainingChange / 100); remainingChange -= dollar100 * 100; int dollar20 = static_cast<int>(remainingChange / 20); remainingChange -= dollar20 * 20;
+	std::cout <<  "-------------------------------------------------------------------------------" ; std::cout << std::endl; // displays denominations of %100, $20, $5, $1, .25, .10, .05, .01). static_cast<int> is a safe way to convert.. 
+	double remainingChange = change; 
+	int dollar100 = static_cast<int>(remainingChange / 100);
+	remainingChange -= dollar100 * 100; 
+	int dollar20 = static_cast<int>(remainingChange / 20); 
+	remainingChange -= dollar20 * 20;
 	int dollar5 = static_cast<int>(remainingChange / 5);
 	remainingChange -= dollar5 * 5;
 	int dollar1 = static_cast<int>(remainingChange / 1);
