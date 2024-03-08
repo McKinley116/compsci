@@ -9,6 +9,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cmath>
+#include <limits>
 #include <ostream>
 #include <set>
 #include <string>
@@ -22,35 +23,48 @@ int main ()
 	int itmQnty1;
 
 	std::cout << "Unit name: ";
+
 	std::cin >> itmBght1;
 	getline(std::cin, itmBght1);
+
+	std::getline(std::cin, itmBght1);	
+
 	std::cout << "Unit price for " << itmBght1 << " is: ";
 	std::cin >> itmPrice1;	
 	std::cout << "Unit quantity for " << itmBght1 << " is: "; 	
 	std::cin >> itmQnty1;
 	std::cout << std::endl;
 
+	// this clears the buffer for getline..
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
 	std::string itmBght2;
 	double itmPrice2;
 	int itmQnty2;
 	std::cout << "Unit name: "; 
-	std::cin >> itmBght2; 
+	std::getline(std::cin, itmBght2); 
 	std::cout << "Unit price for " << itmBght2 << " is: ";
 	std::cin >> itmPrice2;
 	std::cout << "Unit quantity for " << itmBght2 << " is: ";
 	std::cin >> itmQnty2;
 	std::cout << std::endl;
 
+	// this clears the buffer for getline..
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
 	std::string itmBght3;
 	double itmPrice3;
 	int itmQnty3;
 	std::cout << "Unit name: ";
-	std::cin >> itmBght3;	
+	std::getline(std::cin, itmBght3);	
 	std::cout << "Unit price for " << itmBght3 << " is: ";
 	std::cin >> itmPrice3;
 	std::cout << "Unit quantity for " << itmBght3 << " is: ";
 	std::cin >> itmQnty3;
 	std::cout << std::endl;
+
+	// this clears the buffer for getline..
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
 	// require user to input sales tax ( between 0 and 100).
 	int slsTax;	
@@ -60,14 +74,16 @@ int main ()
 
 	// displays break down of items, cost, quantity. cost summary.
 	// cost per item = unit price * quantity
+	const int WIDTH = 15; // included to easily adjust table spacing..
 	double ttlCost1 = itmPrice1 * itmQnty1;
 	double ttlCost2 = itmPrice2 * itmQnty2;
 	double ttlCost3 = itmPrice3 * itmQnty3;
 	std::cout << "$-----Cost Breakdown-----$" << std::endl;
-	std::cout << "Item" << std::setw(20) << "Price" << std::setw(20) << "Quantity" << std::setw(20) << "Cost" << std::endl;
-	std::cout << itmBght1 << std::setw(20) << itmPrice1 << std::setw(20) << itmQnty1 << std::setw(20) << ttlCost1 << std::endl;
-	std::cout << itmBght2 << std::setw(20) << itmPrice2 << std::setw(20) << itmQnty2 << std::setw(20) << ttlCost2 << std::endl;
-	std::cout << itmBght3 << std::setw(20) << itmPrice3 << std::setw(20) << itmQnty3 << std::setw(20) << ttlCost3 << std::endl;
+	std::cout << std::setw(WIDTH) << "Item" << std::setw(WIDTH) << "Price" << std::setw(WIDTH) << "Quantity" << std::setw(WIDTH) << "Cost" << std::setw(WIDTH) << std::endl;
+	std::cout << "-------------------------------------------------------------------------------" << std::endl;
+	std::cout << std::setw(WIDTH) << itmBght1 << std::setw(WIDTH) << itmPrice1 << std::setw(WIDTH) << itmQnty1 << std::setw(WIDTH) << ttlCost1 << std::setw(WIDTH) << std::endl;	
+	std::cout << std::setw(WIDTH) << itmBght2 << std::setw(WIDTH) << itmPrice2 << std::setw(WIDTH) << itmQnty2 << std::setw(WIDTH) << ttlCost2 << std::setw(WIDTH) << std::endl;
+	std::cout << std::setw(WIDTH) << itmBght3 << std::setw(WIDTH) << itmPrice3 << std::setw(WIDTH) << itmQnty3 << std::setw(WIDTH) << ttlCost3 << std::setw(WIDTH) << std::endl;
 	std::cout << std::endl;
 
 	// displays pretax.
@@ -84,7 +100,9 @@ int main ()
 	double txRate = slsTax / 2.0;
 	double tax = preTotal * txRate;
 	double total = preTotal + tax;
-	std::cout << "$"<< total << std::endl;
+	std::cout << total << std::endl;
+	std::cout << std::endl;
+	std::cout <<  "-------------------------------------------------------------------------------";
 	std::cout << std::endl;
 
 	// asks user price paid.
@@ -97,16 +115,10 @@ int main ()
 	double change = moneyPd - total;
 	std::cout << "$-----Change-----$" << std::endl;
 	std::cout << change << std::endl;
+
 	std::cout << "---------Denominations-----------";
-	std::cout << std::endl;
 
-
-	// displays denominations of %100, $20, $5, $1, .25, .10, .05, .01). static_cast<int> is a safe way to convert..
-	double remainingChange = change;
-	int dollar100 = static_cast<int>(remainingChange / 100);
-	remainingChange -= static_cast<int>(remainingChange / 20);
-	int dollar20 = static_cast<int>(remainingChange / 1);
-	remainingChange -= dollar20 * 20;
+	std::cout <<  "-------------------------------------------------------------------------------" ; std::cout << std::endl; // displays denominations of %100, $20, $5, $1, .25, .10, .05, .01). static_cast<int> is a safe way to convert.. double remainingChange = change; int dollar100 = static_cast<int>(remainingChange / 100); remainingChange -= dollar100 * 100; int dollar20 = static_cast<int>(remainingChange / 20); remainingChange -= dollar20 * 20;
 	int dollar5 = static_cast<int>(remainingChange / 5);
 	remainingChange -= dollar5 * 5;
 	int dollar1 = static_cast<int>(remainingChange / 1);
@@ -119,7 +131,7 @@ int main ()
 	remainingChange -= nickels * .05;
 	int pennies = static_cast<int>(round(remainingChange * 100));
 
-	std::cout << "Denominations" << std::endl;
+
 	std::cout << "$100 bills: " << dollar100 << std::endl;
 	std::cout << "$20 bills: " << dollar20 << std::endl;
 	std::cout << "$5 bills: " << dollar5 << std::endl;
