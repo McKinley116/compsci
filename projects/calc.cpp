@@ -23,7 +23,12 @@ int main ()
 	int itmQnty1;
 
 	std::cout << "Unit name: ";
+
+	std::cin >> itmBght1;
+	getline(std::cin, itmBght1);
+
 	std::getline(std::cin, itmBght1);	
+
 	std::cout << "Unit price for " << itmBght1 << " is: ";
 	std::cin >> itmPrice1;	
 	std::cout << "Unit quantity for " << itmBght1 << " is: "; 	
@@ -110,15 +115,14 @@ int main ()
 	double change = moneyPd - total;
 	std::cout << "$-----Change-----$" << std::endl;
 	std::cout << change << std::endl;
-	std::cout <<  "-------------------------------------------------------------------------------" ;
-	std::cout << std::endl;
 
+	std::cout << "---------Denominations-----------";
 
-	// displays denominations of %100, $20, $5, $1, .25, .10, .05, .01). static_cast<int> is a safe way to convert..
-	double remainingChange = change;
+	std::cout <<  "-------------------------------------------------------------------------------" ; std::cout << std::endl; // displays denominations of %100, $20, $5, $1, .25, .10, .05, .01). static_cast<int> is a safe way to convert.. 
+	double remainingChange = change; 
 	int dollar100 = static_cast<int>(remainingChange / 100);
-	remainingChange -= dollar100 * 100;
-	int dollar20 = static_cast<int>(remainingChange / 20);
+	remainingChange -= dollar100 * 100; 
+	int dollar20 = static_cast<int>(remainingChange / 20); 
 	remainingChange -= dollar20 * 20;
 	int dollar5 = static_cast<int>(remainingChange / 5);
 	remainingChange -= dollar5 * 5;
@@ -132,7 +136,7 @@ int main ()
 	remainingChange -= nickels * .05;
 	int pennies = static_cast<int>(round(remainingChange * 100));
 
-	std::cout << "Denominations" << std::endl;
+
 	std::cout << "$100 bills: " << dollar100 << std::endl;
 	std::cout << "$20 bills: " << dollar20 << std::endl;
 	std::cout << "$5 bills: " << dollar5 << std::endl;
@@ -141,6 +145,9 @@ int main ()
 	std::cout << "Dimes: " << dimes << std::endl;
 	std::cout << "Nickels: " << nickels << std::endl;
 	std::cout << "Pennies: " << pennies << std::endl;
+
+	//close out the program at anytime.
+	
 	
 return 0;
 }
